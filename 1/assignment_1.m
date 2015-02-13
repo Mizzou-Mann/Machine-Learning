@@ -46,7 +46,8 @@ disp('P(lightness|salmon) = '); disp(P_lightness_given_salmon);
 disp('P(lightness|seabass) = '); disp(P_lightness_given_seabass);
 
 figure;
-stem(xvalues, [P_lightness_given_salmon P_lightness_given_seabass]);
+stem(xvalues, P_lightness_given_salmon, 'filled', 'r'); hold on;
+stem(xvalues, P_lightness_given_seabass, 'k'); hold off;
 legend('Salmon', 'Seabass');
 
 %
@@ -83,5 +84,6 @@ disp('P(salmon|lightness)'); disp(P_salmon_given_lightness);
 disp('P(seabass|lightness)'); disp(P_seabass_given_lightness);
 
 figure;
-stem(xvalues, [P_salmon_given_lightness P_seabass_given_lightness]);
+stem(xvalues, P_salmon_given_lightness, 'filled', 'r'); hold on;
+stem(xvalues, P_seabass_given_lightness, 'k'); hold off;
 legend('Salmon', 'Seabass');
