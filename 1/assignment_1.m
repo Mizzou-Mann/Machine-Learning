@@ -19,9 +19,6 @@ xvalues = load('formathist.dat');
 % 1 - Plot Salmon and Seabass histogram with the intervals of 
 %     [(k-1)*0.5, k*0.5], with k = 1,...,20
 %
-% k_min = 1; k_max = 20;
-% xvalues = (k_min-1)*0.5:0.5:k_max*0.5;
-
 figure; hist(salmon, xvalues);
 figure; hist(seabass, xvalues);
 
