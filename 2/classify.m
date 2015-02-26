@@ -14,7 +14,7 @@ function [ classification, g_Xn, g_0 ] = classify( w, x0, dataset )
     % Auto-tune decision boundary to x2 bound
     [~, lower] = min(dataset(:, 2));
     [~, upper] = max(dataset(:, 2));
-    g_0 = decision_boundary(w, x0, dataset([lower upper], 1));
+    g_0 = decision_boundary(w, x0, dataset([lower upper], 2));
 
     % NOTE: linear algebra can replace "for loop" here
     %       see ENHANCED section below

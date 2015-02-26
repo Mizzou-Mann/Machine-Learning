@@ -22,13 +22,13 @@ C = [1.21 0; 0 1.21];
 %
 % report c, d, e, f
 %
-% report([u1 u2], C, dataset1);
+report([u1 u2], C, dataset1);
 
 %
 % Part II
 %   report c, d, e, f
 %
-% report([u1 u2], C, dataset2);
+report([u1 u2], C, dataset2);
 
 %
 % Part III
