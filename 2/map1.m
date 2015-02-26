@@ -1,4 +1,4 @@
-function [ w1, w2, gxs ] = map1( dataset )
+function [ classification, gxs ] = map1( dataset )
 % Mininum error classifier for 2-D Gaussian with
 %   Mean:
 %       u1 = [1; 3]
@@ -13,8 +13,9 @@ function [ w1, w2, gxs ] = map1( dataset )
 %   dataset - dataset to be classified
 %
 % Output:   
-%   w1 - data classified as w1
-%   w2 - data classified as w2
+%   classification - classification of the data sample. 
+%                    : 1 for w1 and 0 for w2
+%   gxs - value g(x) for all data sample.
 
     u1 = [1; 3]; u2 = [-2; 1];
     c = 1.21;
@@ -31,8 +32,8 @@ function [ w1, w2, gxs ] = map1( dataset )
     end
     
     classification = gxs > 0;
-    w1 = dataset(classification == 1, :);
-    w2 = dataset(classification == 0, :);
+%     a1 = dataset(classification == 1, :);
+%     a2 = dataset(classification == 0, :);
 end
 
 % ENHANCED:
