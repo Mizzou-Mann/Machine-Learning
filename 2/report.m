@@ -11,8 +11,7 @@ function report(U, C, dataset)
     %
     % c - classify dataset with minimum error classifier (MAP)
     %
-    disp('Alpha 1 = '); disp(dataset(classification == 1, :));
-    disp('Alpha 2 = '); disp(dataset(classification == 0, :));
+    disp('Classification = '); disp([dataset classification']);
 
     %
     % d - plot data sample and decision boundary
