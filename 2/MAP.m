@@ -1,15 +1,9 @@
-function [ classification, gxs ] = map1( dataset )
-% Mininum error classifier for 2-D Gaussian with
-%   Mean:
-%       u1 = [1; 3]
-%       u2 = [-2; 1]
+function [ classification, gxs ] = MAP( U, C, dataset )
+% Mininum error classifier (MAP) for 2-D Gaussian with
 %
-%   Covariance:
-%        C1 = C2 = C = cI
-%
-%   where c = 1.21 and I = identity matrix
-%
-% Input:    
+% Input:
+%   U - 2 mean vectors of the 2-D gaussian
+%   C - Covariance of the 2-D gaussian (assume C1 = C2 = C)
 %   dataset - dataset to be classified
 %
 % Output:   
@@ -17,9 +11,8 @@ function [ classification, gxs ] = map1( dataset )
 %                    : 1 for w1 and 0 for w2
 %   gxs - value g(x) for all data sample.
 
-    u1 = [1; 3]; u2 = [-2; 1];
-    c = 1.21;
-    w = 1/c * (u1 - u2);
+    u1 = U(:, 1); u2 = U(:, 2);
+    w = C \ (u1 - u2); % = inv(C) * (u1 - u2)
     x0 = 1/2 * (u1 + u2);
 
     gxs = [];
@@ -41,4 +34,3 @@ end
 %     scaled_x0 = x0 * ones(1, size(dataset, 1));
 %     G = w' * (dataset' - scaled_x0);
 %     categories = G > 0;
-

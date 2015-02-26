@@ -16,38 +16,23 @@ dataset2 = load('2DGaussianDataset2.txt');
 %
 % Part I
 %
+u1 = [1; 3]; u2 = [-2; 1];
+C = [1.21 0; 0 1.21];
 
 %
-% c - classify dataset1 with map1
+% report c, d, e, f
 %
-[classification, gxs] = map1(dataset1);
-disp('Alpha 1 = '); disp(dataset1(classification == 1, :));
-disp('Alpha 2 = '); disp(dataset1(classification == 0, :));
+report([u1 u2], C, dataset1);
 
 %
-% d - plot data sample and decision boundary
+% Part II
+%   report c, d, e, f
 %
-x = -3:2;
-y = -3/2*x + 5/4;
-figure;
-w1 = dataset1(1:25, :);
-w2 = dataset1(26:end, :);
-plot(w1(:,1), w1(:,2), '.r'); hold on;
-plot(w2(:,1), w2(:,2), 'ok'); hold on;
-plot(x, y); hold off;
-legend('w1', 'w2', 'decision boundary');
-title('Dataset1');
+report([u1 u2], C, dataset2);
 
 %
-% e - plot g(x_n)
+% Part III
 %
-figure;
-plot(gxs);
+D = [1.21 .8; .8 1.21];
+report([u1 u2], D, dataset2);
 
-%
-% f - compute classification error rate
-%
-w1_misclassified = 25 - sum(classification(1:25));
-w2_misclassified = sum(classification(26:end));
-error_rate = (w1_misclassified + w2_misclassified) / size(dataset1, 1) * 100;
-disp(['The classification error rate = ', num2str(error_rate), '%.']);
