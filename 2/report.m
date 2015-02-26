@@ -1,9 +1,12 @@
 function report(U, C, dataset)
-% Produce report
+% REPORT - produce reports
 % Input:
+%   U - mean vector
+%   C - Covariance matrix
 %   dataset - data sample
-
-    [classification, gxs] = MAP(U, C, dataset);
+%   
+    [w, x0] = MAP(U, C);
+    [classification, g_Xn, g_0] = classify(w, x0, dataset);
 
     %
     % c - classify dataset with minimum error classifier (MAP)
@@ -14,25 +17,23 @@ function report(U, C, dataset)
     %
     % d - plot data sample and decision boundary
     %
-    x = -3:2;
-    y = -3/2*x + 5/4;
     figure;
     w1 = dataset(1:25, :);
     w2 = dataset(26:end, :);
     scatter(w1(:,1), w1(:,2), '*r'); hold on;
     scatter(w2(:,1), w2(:,2), 'ok'); hold on;
-    plot(x, y); hold off;
+    plot(g_0(:,1), g_0(:,2)); hold off;
     legend('w1', 'w2', 'decision boundary');
 
     %
     % e - plot g(x_n)
     %
     figure;
-    plot(gxs(1:25), '*r'); hold on;
-    plot(gxs(26:end), 'ok'); hold on;
+    plot(g_Xn(1:25), '*r'); hold on;
+    plot(g_Xn(26:end), 'ok'); hold on;
     x = 0:25; y = 0*x;
     plot(x, y); hold off;
-    legend('w1', 'w2');
+    legend('w1', 'w2', 'y = 0');
 
     %
     % f - compute classification error rate
