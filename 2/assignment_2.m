@@ -28,11 +28,11 @@ report([u1 u2], C, dataset1);
 % Part II
 %   report c, d, e, f
 %
-report([u1 u2], C, dataset2);
+% report([u1 u2], C, dataset2);
 
 %
 % Part III
 %
-D = [1.21 .8; .8 1.21];
-report([u1 u2], D, dataset2);
+% D = [1.21 .8; .8 1.21];
+% report([u1 u2], D, dataset2);
 

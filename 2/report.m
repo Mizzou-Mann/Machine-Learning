@@ -19,8 +19,8 @@ function report(U, C, dataset)
     figure;
     w1 = dataset(1:25, :);
     w2 = dataset(26:end, :);
-    plot(w1(:,1), w1(:,2), '.r'); hold on;
-    plot(w2(:,1), w2(:,2), 'ok'); hold on;
+    scatter(w1(:,1), w1(:,2), '*r'); hold on;
+    scatter(w2(:,1), w2(:,2), 'ok'); hold on;
     plot(x, y); hold off;
     legend('w1', 'w2', 'decision boundary');
 
@@ -28,7 +28,11 @@ function report(U, C, dataset)
     % e - plot g(x_n)
     %
     figure;
-    plot(gxs);
+    plot(gxs(1:25), '*r'); hold on;
+    plot(gxs(26:end), 'ok'); hold on;
+    x = 0:25; y = 0*x;
+    plot(x, y); hold off;
+    legend('w1', 'w2');
 
     %
     % f - compute classification error rate
