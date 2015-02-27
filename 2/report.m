@@ -1,7 +1,7 @@
 function report(U, C, dataset)
 % REPORT - produce reports
 % Input:
-%   U - mean vector
+%   U - mean vector matrix
 %   C - Covariance matrix
 %   dataset - data sample
 %   

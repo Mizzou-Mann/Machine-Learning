@@ -31,5 +31,4 @@ end
 % ENHANCED:
 %
 %     scaled_x0 = x0 * ones(1, size(dataset, 1));
-%     G = w' * (dataset' - scaled_x0);
-%     categories = G > 0;
+%     g_xn = w' * (dataset' - scaled_x0);
