@@ -14,61 +14,70 @@
 
 \begin{document}
 
-\subsection*{4. }
+\subsection*{4. } For question \textbf{(b)} in all parts is implemented in \texttt{MAP} and \texttt{classify} functions in the Matlab code. \\
+
+\noindent \texttt{MAP} function takes the mean vector matrix $U$ and covariance matrix $\Sigma$ then compute the values of $w$ and $x_{0}$ of the discriminant function: \\
+\begin{equation}
+g(\underline{x}) = w^{T} \cdot (\underline{x} - x_{0})
+\end{equation} \\
+
+\noindent \texttt{classify} function takes the $w$, $x_{0}$ and $dataset$ then classify the data, calculate $g(\underline{X}_{n})$, compute and auto-tune the decision boundary. \\ 
+
+\noindent For question \textbf{(c)}, the classification result is printed to the console window when executing the program (\texttt{assignment\_2.m}). \\
 
 % ------------------------------------------ Part I ------------------------------------------
 \paragraph{Part I:}
-\paragraph{d.} Plot the data samples in \textbf{2DGaussianDataset1.txt} and decision boundary: \\
+\paragraph{(d).} Plot the data samples in \textbf{2DGaussianDataset1.txt} and decision boundary: \\
 \begin{figure}[H]
   \centering
     \includegraphics[scale=.6]{images/1_d.png}
   \caption{\textbf{2DGaussianDataset1.txt} and decision boundary (Classifier 1)}
 \end{figure}
 
-\paragraph{e.} Plot $g(\underline{X}_{n})$ values: \\
+\paragraph{(e).} Plot $g(\underline{X}_{n})$ values: \\
 \begin{figure}[H]
   \centering
     \includegraphics[scale=.6]{images/1_e.png}
   \caption{\textbf{2DGaussianDataset1.txt} and $g(\underline{X}_{n})$ values (Classifier 1)}
 \end{figure}
 
-\paragraph{e.} The classification error rate for classifier 1 with \textbf{2DGaussianDataset1.txt} = 4\%.
+\paragraph{(f).} The classification error rate for classifier 1 with \textbf{2DGaussianDataset1.txt} = 4\%.
 
 % ------------------------------------------ Part II ------------------------------------------
 \paragraph{Part II:}
-\paragraph{d.} Plot the data samples in \textbf{2DGaussianDataset2.txt} and decision boundary: \\
+\paragraph{(d).} Plot the data samples in \textbf{2DGaussianDataset2.txt} and decision boundary: \\
 \begin{figure}[H]
   \centering
     \includegraphics[scale=.6]{images/2_d.png}
   \caption{\textbf{2DGaussianDataset2.txt} and decision boundary (Classifier 1)}
 \end{figure}
 
-\paragraph{e.} Plot $g(\underline{X}_{n})$ values: \\
+\paragraph{(e).} Plot $g(\underline{X}_{n})$ values: \\
 \begin{figure}[H]
   \centering
     \includegraphics[scale=.6]{images/2_e.png}
   \caption{\textbf{2DGaussianDataset2.txt} and $g(\underline{X}_{n})$ values (Classifier 1)}
 \end{figure}
 
-\paragraph{e.} The classification error rate for classifier 1 with \textbf{2DGaussianDataset2.txt} = 8\%.
+\paragraph{(f).} The classification error rate for classifier 1 with \textbf{2DGaussianDataset2.txt} = 8\%.
 
 % ------------------------------------------ Part III ------------------------------------------
 \paragraph{Part III:}
-\paragraph{d.} Plot the data samples in \textbf{2DGaussianDataset2.txt} and decision boundary: \\
+\paragraph{(d).} Plot the data samples in \textbf{2DGaussianDataset2.txt} and decision boundary: \\
 \begin{figure}[H]
   \centering
     \includegraphics[scale=.6]{images/3_d.png}
   \caption{\textbf{2DGaussianDataset2.txt} and decision boundary (Classifier 2)}
 \end{figure}
 
-\paragraph{e.} Plot $g(\underline{X}_{n})$ values: \\
+\paragraph{(e).} Plot $g(\underline{X}_{n})$ values: \\
 \begin{figure}[H]
   \centering
     \includegraphics[scale=.6]{images/3_e.png}
   \caption{\textbf{2DGaussianDataset2.txt} and $g(\underline{X}_{n})$ values (Classifier 2)}
 \end{figure}
 
-\paragraph{e.} The classification error rate for classifier 2 with \textbf{2DGaussianDataset2.txt} = 6\%. \\
+\paragraph{(f).} The classification error rate for classifier 2 with \textbf{2DGaussianDataset2.txt} = 6\%. \\
 
 % ------------------------------------------ Explain ------------------------------------------
 The difference between the error rates in \textbf{Part II} and \textbf{Part III} on \textbf{2DGaussianDataset2.txt} is due to the classifiers being used to perform the classification task. Classifier 2 is more accurate than classifier 1 since there is additional information available in term of correlation in the given covariance matrix in classifier 2. \\
