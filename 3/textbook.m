@@ -12,11 +12,13 @@ y = theta .* exp(-theta * x);
 
 figure;
 plot(x, y);
+xlabel('x'); ylabel('p(x|\theta)');
 
 %% 1. b
 x = 2;
-theta = linspace(2, 5);
+theta = linspace(0, 5);
 y = theta .* exp(-theta * x);
 
 figure;
 plot(theta, y);
+xlabel('\theta'); ylabel('p(x|\theta)');
