@@ -1,5 +1,5 @@
 function [ m, P ] = mle( dataset )
-% MLE - Maximum likelihood estimator for mean and covariance 
+% mle - Maximum likelihood estimator for mean and covariance 
 %       of 2-D Gaussian dataset
 %
 %   m : the estimated mean (sample mean)
@@ -13,7 +13,7 @@ function [ m, P ] = mle( dataset )
 %   cov(1, 2)   - E[(x1-mean_x1)(x2-mean_x2)]
 %   var2        - biased variance of x2
 %
-    m = mean(dataset);
+    m = mean(dataset)';
     P = cov(dataset, 1);
 end
 

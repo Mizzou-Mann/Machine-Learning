@@ -15,8 +15,8 @@ clc; clear; close all;
 % Problem 3. Part I
 %
 %   dataset - GDdataMLE1 dataset
-%   m - mean
-%   P - Covariance
+%   m - true mean
+%   P - true covariance
 
 dataset = load('GDdataMLE1.txt');
 m = [1; -1];
@@ -42,3 +42,21 @@ display(P_of_1000_data_samples);
 display(m_of_10000_data_samples);
 display(P_of_10000_data_samples);
 
+% e
+theta_true = theta(m, P);
+
+theta_mle_a = theta(m_of_10_data_samples, P_of_10_data_samples);
+error_a = error_measure_1(theta_mle_a, theta_true);
+display(error_a);
+
+theta_mle_b = theta(m_of_100_data_samples, P_of_100_data_samples);
+error_b = error_measure_1(theta_mle_b, theta_true);
+display(error_b);
+
+theta_mle_c = theta(m_of_1000_data_samples, P_of_1000_data_samples);
+error_c = error_measure_1(theta_mle_c, theta_true);
+display(error_c);
+
+theta_mle_d = theta(m_of_10000_data_samples, P_of_10000_data_samples);
+error_d = error_measure_1(theta_mle_d, theta_true);
+display(error_d);
