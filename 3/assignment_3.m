@@ -45,9 +45,17 @@ display(P_of_10000_data_samples);
 % e
 theta_true = theta(m, P);
 error_1 = [
-    error_measure_1(theta(m_of_10_data_samples, P_of_10_data_samples), theta_true) ...
-    error_measure_1(theta(m_of_100_data_samples, P_of_100_data_samples), theta_true) ...
-    error_measure_1(theta(m_of_1000_data_samples, P_of_1000_data_samples), theta_true) ...
+    error_measure_1(theta(m_of_10_data_samples, P_of_10_data_samples), theta_true) 
+    error_measure_1(theta(m_of_100_data_samples, P_of_100_data_samples), theta_true) 
+    error_measure_1(theta(m_of_1000_data_samples, P_of_1000_data_samples), theta_true) 
     error_measure_1(theta(m_of_10000_data_samples, P_of_10000_data_samples), theta_true)
 ];
 display(error_1);
+
+error_2 = [
+    error_measure_2(theta(m_of_10_data_samples, P_of_10_data_samples), theta_true) 
+    error_measure_2(theta(m_of_100_data_samples, P_of_100_data_samples), theta_true) 
+    error_measure_2(theta(m_of_1000_data_samples, P_of_1000_data_samples), theta_true) 
+    error_measure_2(theta(m_of_10000_data_samples, P_of_10000_data_samples), theta_true)
+];
+display(error_2);
