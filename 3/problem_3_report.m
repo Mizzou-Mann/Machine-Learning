@@ -44,7 +44,7 @@ display(error_2);
 
 % f
 x1 = first_100_data_samples(:,1);
-x2 = first_100_data_samples(:, 2);
+x2 = first_100_data_samples(:,2);
 
 [X,Y]=meshgrid(-4:0.1:4,-4:0.1:4);
 pdf = normal2(X, Y, m_of_100_data_samples, P_of_100_data_samples);

@@ -1,0 +1,213 @@
+% assignment_3.tex - Assignment 3 for Machine Learning class (Spring 2015)
+% Chanmann Lim - March 2015
+
+\documentclass[a4paper]{article}
+
+\usepackage[margin=1 in]{geometry}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{float}
+
+\everymath{\displaystyle}
+
+\begin{document}
+\setcounter{page}{3}
+% \thispagestyle{empty}
+% \pagestyle{empty}
+
+% Part I
+\subsection*{3. Part I}
+
+% a
+\paragraph{a.} $\mu$ and $\Sigma$ from the first 10 data samples: \\
+\begin{align*}
+	\mu = \begin{bmatrix}
+		0.8190 & -0.6271
+	\end{bmatrix}^{T}, \quad
+	\Sigma = \begin{bmatrix}
+		 0.7461  &  -0.1474 \\
+		-0.1474  &   1.6047
+	\end{bmatrix}
+\end{align*}
+
+% b
+\paragraph{b.} $\mu$ and $\Sigma$ from the first 100 data samples: \\
+\begin{align*}
+	\mu = \begin{bmatrix}
+		0.9977 & -0.9725
+	\end{bmatrix}^{T}, \quad
+	\Sigma = \begin{bmatrix}
+		2.2580  &  1.0856 \\
+		1.0856  &  2.1439
+	\end{bmatrix}
+\end{align*}
+
+% c
+\paragraph{c.} $\mu$ and $\Sigma$ from the first 1000 data samples: \\
+\begin{align*}
+	\mu = \begin{bmatrix}
+		1.0222 & -0.9629
+	\end{bmatrix}^{T}, \quad
+	\Sigma = \begin{bmatrix}
+		2.2118  &  1.1878 \\
+		1.1878  &  2.0332
+	\end{bmatrix}
+\end{align*}
+
+% d
+\paragraph{c.} $\mu$ and $\Sigma$ from the first 10000 data samples: \\
+\begin{align*}
+	\mu = \begin{bmatrix}
+		0.9947 & -1.0027
+	\end{bmatrix}^{T}, \quad
+	\Sigma = \begin{bmatrix}
+		1.9978  &  0.9643 \\
+		0.9643  &  1.9237
+	\end{bmatrix}
+\end{align*}
+
+% e
+\paragraph{e.} Parameter estimation errors \\
+
+Measure 1:
+	\begin{tabular}{l *{4}{c}}
+			case     &   a    &   b    &   c    &   d    \\ \hline
+		$\varepsilon$ & 2.0921 & 0.2863 & 0.3424 & 0.0509
+	\end{tabular} \\
+\vspace{2em}
+ 
+Measure 2:
+	\begin{tabular}{l *{4}{c}}
+				case            &   a    &   b    &   c    &   d    \\ \hline
+		$\varepsilon _{\mu}$    & 0.2931 & 0.0195 & 0.0306 & 0.0042 \\ 
+		$\varepsilon _{\Sigma}$ & 1.1840 & 0.1645 & 0.1961 & 0.0292 
+	\end{tabular} \\
+\vspace{2em}
+
+In both \emph{Measure 1} and \emph{Measure 2} we notice that parameter estimation errors decrease as the number of data samples increase. Maximum likelihood estimation assumes that the parameter $\boldsymbol{\theta}$ is fixed then seeks to find the parameter value to maximize the probability of the training data being observed.
+
+% f
+\paragraph{e.} Plot of first 100 data samples and 2D contours of estimated Gaussian pdf \\
+\begin{figure}[H]
+  \centering
+    \includegraphics[scale=.44]{images/3_f_I.png}
+  \caption{100 data samples and estimated Gaussian pdf 2D contours}
+\end{figure}
+
+% Part II
+\subsection*{Part II}
+
+% a
+\paragraph{a.} $\mu$ and $\Sigma$ from the first 10 data samples: \\
+\begin{align*}
+	\mu = \begin{bmatrix}
+		1.8829 & -1.8135
+	\end{bmatrix}^{T}, \quad
+	\Sigma = \begin{bmatrix}
+		 5.6385  & -5.3104 \\
+		-5.3104  &  5.3521
+	\end{bmatrix}
+\end{align*}
+
+% b
+\paragraph{b.} $\mu$ and $\Sigma$ from the first 100 data samples: \\
+\begin{align*}
+	\mu = \begin{bmatrix}
+		1.1741 & -1.2216
+	\end{bmatrix}^{T}, \quad
+	\Sigma = \begin{bmatrix}
+		 2.6753  & -2.5961 \\
+		-2.5961  &  2.6913
+	\end{bmatrix}
+\end{align*}
+
+% c
+\paragraph{c.} $\mu$ and $\Sigma$ from the first 1000 data samples: \\
+\begin{align*}
+	\mu = \begin{bmatrix}
+		0.9539 & -0.9530
+	\end{bmatrix}^{T}, \quad
+	\Sigma = \begin{bmatrix}
+		 1.9939  & -1.9344 \\
+		-1.9344  &  2.0528
+	\end{bmatrix}
+\end{align*}
+
+% d
+\paragraph{c.} $\mu$ and $\Sigma$ from the first 10000 data samples: \\
+\begin{align*}
+	\mu = \begin{bmatrix}
+		1.0023 & -1.0031
+	\end{bmatrix}^{T}, \quad
+	\Sigma = \begin{bmatrix}
+		 1.9659  & -1.8639 \\
+		-1.8639  &  1.9582
+	\end{bmatrix}
+\end{align*}
+
+% e
+\paragraph{e.} Parameter estimation errors \\
+
+Measure 1:
+	\begin{tabular}{l *{4}{c}}
+			case      &   a    &   b    &   c    &   d    \\ \hline
+		$\varepsilon$ & 6.1596 & 1.2266 & 0.0126 & 0.0616
+	\end{tabular} \\
+\vspace{2em}
+ 
+Measure 2: 
+	\begin{tabular}{l *{4}{c}}
+				case            &   a    &   b    &   c    &   d    \\ \hline
+		$\varepsilon _{\mu}$    & 0.8489 & 0.1993 & 0.0056 & 0.0028 \\ 
+		$\varepsilon _{\Sigma}$ & 3.4881 & 0.6893 & 0.0057 & 0.0355 
+	\end{tabular} \\
+\vspace{2em}
+
+In both \emph{Measure 1} and \emph{Measure 2} we notice that parameter estimation errors decrease as the number of data samples increase. Maximum likelihood estimation assumes that the parameter $\boldsymbol{\theta}$ is fixed then seeks to find the parameter value to maximize the probability of the training data being observed.
+
+% f
+\paragraph{e.} Plot of first 100 data samples and 2D contours of estimated Gaussian pdf \\
+\begin{figure}[H]
+  \centering
+    \includegraphics[scale=.44]{images/3_f_II.png}
+  \caption{100 data samples and estimated Gaussian pdf 2D contours}
+\end{figure}
+
+\newpage
+\subsection*{Appendix:}
+\lstinputlisting[language=Matlab, title=\lstname, basicstyle=\footnotesize]{assignment_3.m}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
