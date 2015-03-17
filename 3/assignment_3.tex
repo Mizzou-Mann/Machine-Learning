@@ -86,13 +86,13 @@ Measure 2:
 	\end{tabular} \\
 \vspace{2em}
 
-In both \emph{Measure 1} and \emph{Measure 2} we notice that parameter estimation errors decrease as the number of data samples increase. Maximum likelihood estimation assumes that the parameter $\boldsymbol{\theta}$ is fixed then seeks to find the parameter value to maximize the probability of the training data being observed.
+In \emph{Measure 1}, the estimation error declines as more data are obtained, however it is not all the cases in \emph{Measure 2} as we observe the estimation error in mean $\varepsilon _{\mu}$ and the estimation error in covariance $\varepsilon _{\Sigma}$ differently. When 100 samples are used to learn parameter $\boldsymbol{\theta}$, the error in mean increase compared to when only 10 samples are being fed into the MLE estimator and this phenomenon can be explained by the sensitivity of the mean measure to outlier in the samples data.
 
 % f
 \paragraph{e.} Plot of first 100 data samples and 2D contours of estimated Gaussian pdf \\
 \begin{figure}[H]
   \centering
-    \includegraphics[scale=.44]{images/3_f_I.png}
+    \includegraphics[scale=.47]{images/3_f_I.png}
   \caption{100 data samples and estimated Gaussian pdf 2D contours}
 \end{figure}
 
@@ -165,15 +165,86 @@ Measure 2:
 	\end{tabular} \\
 \vspace{2em}
 
-In both \emph{Measure 1} and \emph{Measure 2} we notice that parameter estimation errors decrease as the number of data samples increase. Maximum likelihood estimation assumes that the parameter $\boldsymbol{\theta}$ is fixed then seeks to find the parameter value to maximize the probability of the training data being observed.
+In both \emph{Measure 1} and \emph{Measure 2} we notice that parameter estimation errors decrease as the number of data samples increase. Maximum likelihood estimation assumes that the parameter $\boldsymbol{\theta}$ is fixed then seeks to find the parameter value that maximizes the probability of the training data being observed.
 
 % f
 \paragraph{e.} Plot of first 100 data samples and 2D contours of estimated Gaussian pdf \\
 \begin{figure}[H]
   \centering
-    \includegraphics[scale=.44]{images/3_f_II.png}
+    \includegraphics[scale=.47]{images/3_f_II.png}
   \caption{100 data samples and estimated Gaussian pdf 2D contours}
 \end{figure}
+
+% Prob. 4
+\subsection*{4.}
+
+% a
+\paragraph{a.} ~\\
+\begin{align*}
+	\mu_{MLE} = \begin{bmatrix}
+		4.2897 \\
+    	3.1275 \\
+    	2.9466 \\
+    	2.6994 \\
+    	2.5360 \\
+    	2.3195 \\
+    	2.1012 \\
+    	2.1773 \\
+    	2.1529 \\
+    	1.9803 \\
+    	1.9825 \\
+    	2.0185 \\
+    	1.9584 \\
+    	1.9170 \\
+    	1.9686 \\
+    	1.9283 \\
+    	1.9663 \\
+    	1.9756 \\
+    	1.9851 \\
+    	2.0310
+	\end{bmatrix}, \quad
+	\mu_{MAP} = \begin{bmatrix}
+		2.6179 \\
+    	2.5975 \\
+    	2.6148 \\
+    	2.5178 \\
+    	2.4326 \\
+    	2.2876 \\
+    	2.1245 \\
+    	2.1821 \\
+   		2.1618 \\
+    	2.0185 \\
+    	2.0173 \\
+    	2.0454 \\
+    	1.9917 \\
+    	1.9535 \\
+    	1.9966 \\
+    	1.9593 \\
+    	1.9915 \\
+    	1.9986 \\
+    	2.0061 \\
+    	2.0467
+	\end{bmatrix}
+\end{align*}
+
+% b
+\paragraph{b.} Plot of the error curves of MLE and MAP:\\
+\begin{figure}[H]
+  \centering
+    \includegraphics[scale=.47]{images/4_esti_error.png}
+  \caption{Error curves when $\mu_{true} = 2$}
+\end{figure}
+
+MLE performs poorly compared to MAP when there is less training data available and sometimes the error is too high to to be acceptable and should not be used however when samples data is abundant MLE estimation is almost as good as MAP method which requires much more computational power to evaluate.
+
+% c
+\paragraph{c.} Plot of the $\mu \sim N(\mu_{N}, \sigma^{2}_{N})$ for k=1, 10 and 20:\\
+\begin{figure}[H]
+  \centering
+    \includegraphics[scale=.47]{images/4_posterior_pdf.png}
+  \caption{Error curves when $\mu_{true} = 2$}
+\end{figure}
+
 
 \newpage
 \subsection*{Appendix:}

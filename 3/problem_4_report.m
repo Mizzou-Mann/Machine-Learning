@@ -21,6 +21,7 @@ figure;
 plot(Mu_error(:,1), 'b'); hold on;
 plot(Mu_error(:,2), 'g--'); hold off;
 legend('MLE', 'MAP');
+xlabel('k'); ylabel('estimation error');
 
 % c
 X = (-1:0.01:4)';
