@@ -42,14 +42,8 @@ problem_3_report;
 %
 
 dataset = load('GDdataMLEMAP.txt');
-sigma = 2;
-mu_0 = 2.2; sigma_0 = sqrt(0.25);
-% Mu = [mu_mle, mu_map]
-Mu = zeros(20, 2);
-for k=1:20
-    samples = dataset(1:2*(2*k-1));
-    Mu(k, 1) = mle(samples);
-    Mu(k, 2) = map(samples, sigma, mu_0, sigma_0);
-end
+sigma = sqrt(2);
+mu_0 = 2.2;
+sigma_0 = sqrt(0.25);
 
-display(Mu);
+problem_4_report;
