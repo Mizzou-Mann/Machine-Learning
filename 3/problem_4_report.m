@@ -33,3 +33,4 @@ plot(X, Y1, 'b'); hold on;
 plot(X, Y10, 'g--');
 plot(X, Y20, 'r:'); hold off;
 legend('k=1', 'k=10', 'k=20');
+xlabel('x'); ylabel('\mu \sim N(\mu_{N}, \sigma^{2}_{N})');

@@ -242,9 +242,10 @@ MLE performs poorly compared to MAP when there is less training data available a
 \begin{figure}[H]
   \centering
     \includegraphics[scale=.47]{images/4_posterior_pdf.png}
-  \caption{Error curves when $\mu_{true} = 2$}
+  \caption{$\mu \sim N(\mu_{N}, \sigma^{2}_{N}), \quad k=\{1, 10, 20\}$}
 \end{figure}
 
+All posterior probability density functions of $\mu \sim N(\mu_{N}, \sigma^{2}_{N})$ when k=1, 10 and 20 have different mean and variance and by observing the variance of each PDF we notice that the PDF of $\mu$ when k=1 has the widest spread in $x$ direction than other densities which indicates the poor quality of its estimated mean and in the case of k=20 the variance measure become smaller than the other two curves hence the estimated mean when k=20 is more accurate than when k=1 and k=10. In treating the parameter $\boldsymbol{\theta}$ as a random variable in MAP estimation, the estimated $\mu$ can be improved significantly as new training data is obtained.
 
 \newpage
 \subsection*{Appendix:}
