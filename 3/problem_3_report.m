@@ -52,7 +52,7 @@ x1 = first_100_data_samples(:,1);
 x2 = first_100_data_samples(:,2);
 
 [X,Y] = meshgrid(-4:0.1:4,-4:0.1:4);
-Pdf = normal2(X, Y, m_of_100_data_samples, P_of_100_data_samples);
+Pdf = normal2(X, Y, m_of_1000_data_samples, P_of_1000_data_samples);
 levels = exp(-1) / ( 2*pi*sqrt( det(P_of_100_data_samples) ) );
 
 figure;
