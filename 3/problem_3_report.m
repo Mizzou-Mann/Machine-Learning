@@ -51,11 +51,11 @@ display(error_2);
 x1 = first_100_data_samples(:,1);
 x2 = first_100_data_samples(:,2);
 
-[X,Y]=meshgrid(-4:0.1:4,-4:0.1:4);
+[X,Y] = meshgrid(-4:0.1:4,-4:0.1:4);
 Pdf = normal2(X, Y, m_of_100_data_samples, P_of_100_data_samples);
 levels = exp(-1) / ( 2*pi*sqrt( det(P_of_100_data_samples) ) );
 
 figure;
 plot(x1, x2, 'x'); hold on;
-contour(X, Y, Pdf, [levels]);
+contour(X, Y, Pdf, levels);
 axis equal;

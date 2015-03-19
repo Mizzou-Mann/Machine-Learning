@@ -15,7 +15,7 @@ display(Mu);
 
 % b
 mu_truth = 2; 
-Mu_error = abs(Mu - mu_truth);
+Mu_error = abs(Mu - mu_truth); % L2-norm
 
 figure;
 plot(Mu_error(:,1), 'b'); hold on;
@@ -24,7 +24,7 @@ legend('MLE', 'MAP');
 xlabel('k'); ylabel('estimation error');
 
 % c
-X = (-1:0.01:4)';
+X = (-1:0.001:4)';
 figure;
 Y1 = normal1(X, Mu(1, 2), sigma_n(1));
 Y10 = normal1(X, Mu(10, 2), sigma_n(10));
