@@ -62,7 +62,6 @@ X_given_setosa_training = X_setosa(11:40, :);
 X_given_versicolor_training = X_versicolor(11:40, :);
 X_given_virginica_training = X_virginica(11:40, :);
 
-[Mu_x, Sigma_x_full] = mle([X_given_setosa_training; X_given_versicolor_training; X_given_virginica_training]);
 [Mu_x_given_setosa, Sigma_x_given_setosa_full] = mle(X_given_setosa_training);
 [Mu_x_given_versicolor, Sigma_x_given_versicolor_full] = mle(X_given_versicolor_training);
 [Mu_x_given_virginica, Sigma_x_given_virginica_full] = mle(X_given_virginica_training);
@@ -70,7 +69,6 @@ X_given_virginica_training = X_virginica(11:40, :);
 %
 % Experiment 1
 %
-Sigma_x = diag(diag(Sigma_x_full));
 Sigma_x_given_setosa = diag(diag(Sigma_x_given_setosa_full));
 Sigma_x_given_versicolor = diag(diag(Sigma_x_given_versicolor_full));
 Sigma_x_given_virginica = diag(diag(Sigma_x_given_virginica_full));
@@ -81,7 +79,6 @@ problem_5_report;
 %
 % Experiment 2
 %
-Sigma_x = Sigma_x_full;
 Sigma_x_given_setosa = Sigma_x_given_setosa_full;
 Sigma_x_given_versicolor = Sigma_x_given_versicolor_full;
 Sigma_x_given_virginica = Sigma_x_given_virginica_full;

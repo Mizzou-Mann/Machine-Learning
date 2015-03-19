@@ -1,6 +1,5 @@
 % a
-display(Mu_x);
-display(Sigma_x);
+%   See mle.m for the MLE implementation
 
 % b
 display(Mu_x_given_setosa);
