@@ -23,7 +23,7 @@ end
 
 %Calculate cov matrix and the PCA matrixes
 m           = mean(patterns')';
-S			= ((patterns - m*ones(1,c)) * (patterns - m*ones(1,c))');
+S			= ((patterns - m*ones(1,c)) * (patterns - m*ones(1,c))') / c;
 [V, D]	    = eig(S);
 W			= V(:,r-dimension+1:r)';
 U			= S*W'*inv(W*S*W');
