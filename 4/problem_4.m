@@ -7,7 +7,7 @@ Nfile = 10; % # of files
 
 % Read images from input{i} folder
 Im = readimages( 'input' , 1:Nfolder, 'pgm', 1:Nfile);
-[R,C]=size(Im{1,1}); % # of rows and colums per image
+[R, ~]=size(Im{1,1}); % # of rows and colums per image
 
 % Convert images to vectors
 Imv = mat2vec(Im);
