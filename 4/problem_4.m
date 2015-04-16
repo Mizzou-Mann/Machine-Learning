@@ -17,6 +17,7 @@ k = [1 4 8]; % dimensions to be preserved
 x_bar = mean(Imv{1}, 2); % the sample mean
 [D, N] = size(Imv{1}); % # original dimensions and training samples
 
+% (a) and (b)
 % Plot a 4-by-1 subplotting system
 figure;
 subplot(4,1,1);
@@ -43,3 +44,16 @@ for m=k
     subplot_counter = subplot_counter + 1;
 end
 colormap(gray(256));
+
+%% (c)
+% Covariance S = E[(x-x_bar) * (x-x_bar)'];
+distance = Imv{1} - x_bar*ones(1,N);
+S = (distance * distance') / N;
+[~, D] = eig(S);
+Lambda = sort(diag(D), 'descend'); % l1 > l2 > ...
+
+for m=k
+    beta_k = sum(Lambda(1:m)) / sum(Lambda);
+    e_square = sum(Lambda(m+1:end));
+    display(['k:', num2str(m), ' => beta_k = ', num2str(beta_k), ', e_square = ', num2str(e_square)]);
+end
