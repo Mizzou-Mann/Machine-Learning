@@ -1,0 +1,73 @@
+% assignment_4.tex - Assignment 4 for Machine Learning class (Spring 2015)
+% Chanmann Lim - April 2015
+
+\documentclass[a4paper]{article}
+
+\usepackage[margin=1 in]{geometry}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{rotating}
+
+\everymath{\displaystyle}
+
+\begin{document}
+% Part I
+\subsection*{2.}
+
+% Iris training dataset consists of 90 samples from homework 3 is used to conduct the Principal component analysis (PCA) using $PCA$ function from Classification toolbox to obtain $W$ transformation matrix.\\
+% \paragraph{a.}
+% \paragraph{b.} To reduce the dimension of the test samples, we need to  \\
+% \paragraph{c.} ~\\
+% \paragraph{d.} ~\\
+\paragraph{e.} Confusion table: \\
+
+\begin{tabular}{|r| *{3}{c|}}
+  \hline
+  \multirow{2}{*}{True class} 
+        & \multicolumn{3}{ c| }{Classified class} \\ \cline{2-4}
+        & Setosa & Versicolor & Virginica\\ \hline
+  Setosa    & 20 &  0 &  0\\ \hline
+  Versicolor  &  0 & 20 &  0\\ \hline
+  Virginica &  0 &  0 & 20\\ \hline
+  
+\end{tabular}
+\paragraph{f.} Scatter plot for the PCA projected Iris data: \\
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[scale=.47]{images/2_f.png}
+  \caption{2D projected test dataset}
+\end{figure}
+\paragraph{g.} The original 4D Iris test dataset was projected into 2D data samples using PCA before classification task is performed and for the given set of test data we found that there is no classification error using MLE classifier which can be seen from the scatter plot and the confusion table.\\
+
+
+
+
+
+\newpage
+\subsection*{Appendix:}
+\lstinputlisting[language=Matlab, title=\lstname, basicstyle=\footnotesize]{assignment_4.m}
+\lstinputlisting[language=Matlab, title=\lstname, basicstyle=\footnotesize]{problem_2.m}
+\lstinputlisting[language=Matlab, title=\lstname, basicstyle=\footnotesize]{problem_3.m}
+\lstinputlisting[language=Matlab, title=\lstname, basicstyle=\footnotesize]{problem_4.m}
+\lstinputlisting[language=Matlab, title=\lstname, basicstyle=\footnotesize]{problem_5.m}
+\lstinputlisting[language=Matlab, title=\lstname, basicstyle=\footnotesize]{problem_6.m}
+\lstinputlisting[language=Matlab, title=\lstname, basicstyle=\footnotesize]{classify.m}
+\lstinputlisting[language=Matlab, title=\lstname, basicstyle=\footnotesize]{g_mle.m}
+\lstinputlisting[language=Matlab, title=\lstname, basicstyle=\footnotesize]{mle.m}
+\lstinputlisting[language=Matlab, title=\lstname, basicstyle=\footnotesize]{parzen_window.m}
+
+\lstinputlisting[language=Matlab, title=\lstname, basicstyle=\footnotesize]{pca_approximation.m}
+\lstinputlisting[language=Matlab, title=\lstname, basicstyle=\footnotesize]{split.m}
+\lstinputlisting[language=Matlab, title=\lstname, basicstyle=\footnotesize]{strcomp.m}
+
+
+
+
+
+
+\end{document}
