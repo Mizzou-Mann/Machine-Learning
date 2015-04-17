@@ -45,10 +45,9 @@ for m=k
 end
 colormap(gray(256));
 
-%% (c)
+% (c)
 % Covariance S = E[(x-x_bar) * (x-x_bar)'];
-distance = Imv{1} - x_bar*ones(1,N);
-S = (distance * distance') / N;
+S = cov(Imv{1}');
 [~, D] = eig(S);
 Lambda = sort(diag(D), 'descend'); % l1 > l2 > ...
 
