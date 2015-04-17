@@ -46,6 +46,26 @@
 % -------------------------------- 3 --------------------------------
 \subsection*{3.}
 \paragraph{c.} The classification task of the Iris data is a 3-class classification problem and for the Multiple discriminant analysis which is a generalization of Fisher's linear discriminant involves (3-1) discriminant functions hence the dimensionality of projection is not possible to get up to 3. \\
+\paragraph{e.} Confusion table (MDA): \\
+
+\begin{tabular}{|r| *{3}{c|}}
+  \hline
+  \multirow{2}{*}{True class} 
+        & \multicolumn{3}{ c| }{Classified class} \\ \cline{2-4}
+        & Setosa & Versicolor & Virginica\\ \hline
+  Setosa    & 20 &  0 &  0\\ \hline
+  Versicolor  &  0 & 20 &  0\\ \hline
+  Virginica &  0 &  0 & 20\\ \hline
+  
+\end{tabular}
+\paragraph{g.} Scatter plot for the PCA projected Iris data with MDA: \\
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[scale=.47]{images/3_g.png}
+  \caption{2D projected test dataset}
+\end{figure}
+\paragraph{g.} Same as the classification result of the PCA function, projected 2D dataset produced by MDA function also work really well with MLE classifier and we could also get zero classification error for the given dataset.\\
 
 \newpage
 \subsection*{Appendix:}
