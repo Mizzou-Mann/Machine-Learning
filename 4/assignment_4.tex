@@ -67,6 +67,23 @@
 \end{figure}
 \paragraph{g.} Same as the classification result of the PCA function, projected 2D dataset produced by MDA function also work really well with MLE classifier and we could also get zero classification error for the given dataset.\\
 
+\subsection*{4.}
+\paragraph{b.} Display original and approximated images: \\
+\begin{figure}[H]
+  \centering
+    \includegraphics[scale=.67]{images/4_b.png}
+  \caption{Original and approximated images}
+\end{figure}
+
+\paragraph{c.} Proportion of variances(beta\_k) and approximation error(e\_square). \\
+
+\begin{verbatim}
+k:1 => beta_k = 0.40158, e_square = 631257.3661
+k:4 => beta_k = 0.78715, e_square = 224526.7043
+k:8 => beta_k = 0.98096, e_square = 20080.7289
+\end{verbatim}
+
+
 \newpage
 \subsection*{Appendix:}
 \lstinputlisting[language=Matlab, title=\lstname, basicstyle=\footnotesize]{assignment_4.m}
